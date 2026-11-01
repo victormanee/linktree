@@ -25,9 +25,6 @@ body {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
-.container > div {
-    margin-top: 20px;
-}
 .header {
     display: flex;
     justify-content: center;
@@ -125,14 +122,177 @@ p {
     box-shadow: 0 8px 20px #00000015;
 }
 .footer {
-    margin: 100px 100px 150px 100px;
+    margin: 100px 100px 40px 100px;
     padding: 10px;
     border: 1px solid #ffffff80;
     border-radius: 30px;
-    background: #ffffff75;
+    background: #ffffff;
     text-align: center;
 }
+#footer-text{
+    color: white;
+}
+.card-scene {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0;
+    perspective: 1200px;
+}
 
+/* Button above the card */
+
+.flip-button {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin: 0 0 0 auto;
+    padding: 10px;
+    border: 1px solid #ffffff70;
+    border-radius: 50%;
+    background: #ffffff40;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+.card-back > button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: 0;
+}
+
+.flip-button:hover {
+    background: #ffffff75;
+    transform: scale(1.08);
+}
+
+.flip-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.flip-tooltip {
+    position: absolute;
+    right: 55px;
+
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    background: #111827;
+    color: white;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(5px);
+    transition: 0.3s ease;
+
+    pointer-events: none;
+}
+
+.flip-button:hover .flip-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+/* The rotating element */
+
+.card-inner {
+    position: relative;
+    width: 100%;
+
+    display: grid;
+    transform-style: preserve-3d;
+
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Both faces occupy the same grid area */
+
+.card-front,
+.card-back {
+    grid-area: 1 / 1;
+
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    margin: 0;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Front face */
+
+.card-front {
+    transform: rotateY(0deg);
+}
+
+/* Back face */
+
+.card-back {
+    transform: rotateY(180deg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* Image on the back */
+
+.back-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 50%;
+    border-bottom: #6366f1 5px solid;
+    margin: 20px auto auto auto;
+    transition: .8s ease;
+}
+.back-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.8s ease;
+}
+
+/* Flip state */
+
+.card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Front face interaction */
+.card-inner:not(.is-flipped) .card-front {
+    pointer-events: auto;
+}
+
+/* Back face interaction */
+.card-inner:not(.is-flipped) .card-back {
+    pointer-events: none;
+}
+
+.card-inner.is-flipped .card-front {
+    pointer-events: none;
+}
+
+.card-inner.is-flipped .card-back {
+    pointer-events: auto;
+}
 /*tablet screen*/
 @media screen and (min-width: 600px) {
     body {
@@ -196,5 +356,16 @@ p {
 
     .footer {
         font-size: 0.8rem;
+    }
+    .flip-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .card-inner {
+        transition: none;
     }
 }

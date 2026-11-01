@@ -3,38 +3,56 @@
     <head>
         <title>My link tree</title>
         <link href = "/style.css" rel = "stylesheet">
-        <script src="script.js"></script>
         <link rel="icon" type="image/png" href="/favicon.jpg" />
     </head>
     <body>
-        <div class="container">
-            <div class = "header">
-            <img src="/images/InShot_20250626_173528396-1.jpg" alt = "logo" class = "logo">
-            </div>
-            <h1>Vic-StAR Links</h1>
-            <p>A star reborn</p>
-            <div class = icons>
-                <a href ="https://www.instagram.com/_vic_star/" target="_blank"><img src ="/images/instagram.svg" alt ="instagram icon"></a>
-                <a href ="https://api.whatsapp.com/send?phone=+254716802450&text=Hello%20Victor%20" target="_blank"><img src ="/images/whatsapp.svg" alt = "whatsapp icon"></a>
-                <a href ="https://victormanee.vercel.app" target="_blank"><img src ="/images/website.svg" alt = "website icon"></a>
-            </div>      
-            <div class = "profiles">
-                <a href = "https://api.whatsapp.com/send?phone=+254716802450&text=Hello%20Victor%20" target="_blank" class = "links">Whatsapp</a>
-                <a href = "https://www.instagram.com/_vic_star/" target="_blank" class = "links">Instagram</a>
-                <a href = "https://www.tiktok.com/@_vic_star_?_r=1&_t=ZS-9B1RvCVqkj6" target="_blank" class = "links">TikTok</a>
-                <a href = "Add me on Snapchat! Username: vic-star1 https://www.snapchat.com/add/vic-star1?share_id=dgrEdsMF3JA&locale=en-US" target="_blank" class = "links">Snapchat</a>
-                <a href = "https://victormanee.vercel.app" target="_blank" class = "links">Portfolio</a>
-                <a href = "https://www.facebook.com/vic0star" target="_blank" class = "links">Facebook</a>
-                <a href = "https://nextech.consortium.vercel.app" target="_blank" class = "links">NexTech</a>
-                <a href = "https://mwanacheck.lovable.app" target="_blank" class = "links">Mwanacheck</a>
-                <a href = "https://access-career.vercel.app" target="_blank" class = "links">Access</a>
-            </div>
-            <div class = "footer">
-                <P>© copyright 2026. Made by VicStAR</P>
-            </div>
-            <div>
-                <p> DM to get yours </p>
+        <div class="card-scene">
+            <div class="card-inner" id="cardInner">
+                <div class="container card-front">
+                    <button class="flip-button" aria-label="Flip card" aria-pressed="false">
+                        <img src="/images/flip.svg" alt="" class="flip-icon">
+                        <span class="flip-tooltip">Flip</span>
+                    </button>
+
+                    <div class = "header">
+                    <img src="/images/logo.jpg" alt = "logo" class = "logo">
+                    </div>
+                    <h1>Vic-StAR Links</h1>
+                    <p>A star reborn</p>
+                    <div class = icons>
+                        <a href ="https://www.instagram.com/_vic_star/" target="_blank"><img src ="/images/instagram.svg" alt ="instagram icon"></a>
+                        <a href ="https://api.whatsapp.com/send?phone=+254716802450&text=Hello%20Victor%20" target="_blank"><img src ="/images/whatsapp.svg" alt = "whatsapp icon"></a>
+                        <a href ="https://victormanee.vercel.app" target="_blank"><img src ="/images/website.svg" alt = "website icon"></a>
+                    </div>      
+                    <div class = "profiles">
+                        <a href = "https://api.whatsapp.com/send?phone=+254716802450&text=Hello%20Victor%20" target="_blank" class = "links">Whatsapp</a>
+                        <a href = "https://www.instagram.com/_vic_star/" target="_blank" class = "links">Instagram</a>
+                        <a href = "https://www.tiktok.com/@_vic_star_?_r=1&_t=ZS-9B1RvCVqkj6" target="_blank" class = "links">TikTok</a>
+                        <a href = "Add me on Snapchat! Username: vic-star1 https://www.snapchat.com/add/vic-star1?share_id=dgrEdsMF3JA&locale=en-US" target="_blank" class = "links">Snapchat</a>
+                        <a href = "https://victormanee.vercel.app" target="_blank" class = "links">Portfolio</a>
+                        <a href = "https://www.facebook.com/vic0star" target="_blank" class = "links">Facebook</a>
+                        <a href = "https://nextech-consortium.vercel.app" target="_blank" class = "links">NexTech</a>
+                        <a href = "https://mwanacheck.lovable.app" target="_blank" class = "links">Mwanacheck</a>
+                        <a href = "https://access-career.vercel.app" target="_blank" class = "links">Access</a>
+                    </div>
+                    <div class = "footer">
+                        <P>© copyright 2026. Made by VicStAR</P>
+                    </div>
+                    <div id = "footer-text">
+                        <p> DM to get yours </p>
+                    </div>
+                </div>
+                <div class="container card-back">
+                    <button class="flip-button" aria-label="Flip card" aria-pressed="false">
+                        <img src="/images/flip.svg" alt="" class="flip-icon">
+                        <span class="flip-tooltip">Flip</span>
+                    </button>
+                    <img src="/images/pic (4).png" alt="Back of the card" class="back-image">
+                </div>
+
             </div>
         </div>
+
+        <script src="/script.js" defer></script>
     </body>
 </html>
